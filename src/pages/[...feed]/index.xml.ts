@@ -1,5 +1,6 @@
 import { getPosts, taxonomy } from '../../lib/content';
 import { rss } from '../../lib/feeds';
+export const prerender = true;
 export async function getStaticPaths() {
   const posts = await getPosts();
   return [

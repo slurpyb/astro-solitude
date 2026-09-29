@@ -10,8 +10,14 @@
   "packageManager": "pnpm@11.24.0",
   "scripts": {
     "dev": "astro dev",
+    "dev:lab:static": "SOLITUDE_RENDER_MODE=static astro dev --host 127.0.0.1 --port 4331",
+    "dev:lab:server": "SOLITUDE_RENDER_MODE=server astro dev --host 127.0.0.1 --port 4332",
     "build": "astro build",
+    "build:lab:static": "SOLITUDE_RENDER_MODE=static SOLITUDE_OUT_DIR=dist-static astro build",
+    "build:lab:server": "SOLITUDE_RENDER_MODE=server SOLITUDE_OUT_DIR=dist-server astro build",
     "preview": "astro preview",
+    "preview:lab:static": "SOLITUDE_RENDER_MODE=static SOLITUDE_OUT_DIR=dist-static astro preview --host 127.0.0.1 --port 4331",
+    "start:lab:server": "SOLITUDE_RENDER_MODE=server HOST=127.0.0.1 PORT=4332 node dist-server/server/entry.mjs",
     "check": "pnpm check:scripts && pnpm check:astro",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
@@ -27,10 +33,14 @@
   "dependencies": {
     "@astrojs/markdown-satteri": "0.4.1",
     "@astrojs/mdx": "8.0.1",
+    "@astrojs/node": "^11.1.6",
+    "@astrojs/react": "^7.0.0",
     "@fortawesome/fontawesome-free": "7.3.0",
     "astro": "7.3.2",
     "katex": "0.18.7",
     "marked": "17.0.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "yaml": "2.9.0"
   },
   "devDependencies": {
@@ -40,6 +50,8 @@
     "@types/katex": "0.16.8",
     "@types/node": "24.13.3",
     "@types/pngjs": "6.0.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@typescript/native": "npm:typescript@7.0.2",
     "pixelmatch": "7.2.0",
     "pngjs": "7.0.0",

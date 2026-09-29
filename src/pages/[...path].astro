@@ -1,6 +1,7 @@
 ---
 import { getRoutes } from '../lib/routes';
 import EntryPage from '../layouts/EntryPage.astro';
+export const prerender = true;
 export async function getStaticPaths() {
   return (await getRoutes())
     .filter((r) => !r.path.endsWith('.html'))

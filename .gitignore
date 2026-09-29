@@ -1,5 +1,8 @@
 node_modules/
 dist/
+dist-static/
+dist-server/
+.rendering-lab/
 .astro/
 test-results/
 playwright-report/

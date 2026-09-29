@@ -1,4 +1,5 @@
 import { cfg, config, url } from '../../lib/site';
+export const prerender = true;
 export function getStaticPaths() {
   return cfg.pwa.enable && cfg.pwa.manifest.endsWith('.webmanifest')
     ? [
